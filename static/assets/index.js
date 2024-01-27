@@ -32,7 +32,29 @@ $(function () {
         });
     });
     //Write the code here for AJAX call
+  $("#save_button").click(function () {
+        save_data = {
 
+
+            
+        }
+        $.ajax({
+            type: 'POST',
+            url: "/save-entry",
+            data: JSON.stringify(save_data),
+            dataType: "json",
+            contentType: 'application/json',
+            success: function () {
+
+                
+            },
+            error: function (result) {
+                
+                
+            }
+        });
+
+    });
 
 })
 
