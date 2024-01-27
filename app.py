@@ -32,7 +32,26 @@ def predict_emotion():
         }), 200
         
 #Write the code for API here
+@app.route("/save-entry", methods=["POST"])
+def save_entry():
 
+    # Get Date, Predicted Emotion & Text Enter by the user to save the entry
+
+
+
+
+
+
+
+
+    save_text = save_text.replace("\n", " ")
+
+    # CSV Entry
+    entry = f'"{date}","{save_text}","{emotion}"\n'  
+
+    with open("./static/assets/data_files/data_entry.csv", "a") as f:
+        f.write(entry)
+    return jsonify("Success")
                 
 if __name__ == "__main__":
     app.run(debug=True)
